@@ -1,0 +1,42 @@
+<div class="page-container">
+  <div class="trip-card">
+    <div class="card-actions">
+      <button class="delete-button" [hidden]="trip.cancelled" (click)="removeTrip()">🗑️</button>
+    </div>
+    <div class="card-body">
+      <h2 class="trip-title">{{ trip.title }}</h2>
+      <p class="trip-ticker">{{ trip.ticker }}</p>
+      <p class="trip-description">{{ trip.description }}</p>
+      <p class="trip-price">Price: {{ trip.price }} €</p>
+      <div class="price-editor">
+        <label for="price" class="price-label"> New price: </label>
+        <input id="price" type="number" class="price-input" [(ngModel)]="trip.price" />
+      </div>
+      <p class="trip-city">{{ trip.city }}, {{ trip.country }}</p>
+      <p class="trip-difficulty">Dificulty: {{ trip.difficulty }}</p>
+      <p class="trip-max-participants">
+        <strong>Max Participants:</strong> {{ trip.maxParticipants }}
+      </p>
+      <p class="trip-start-date"><strong>Start Date:</strong> {{ trip.startDate }}</p>
+      <p class="trip-end-date"><strong>End Date:</strong> {{ trip.endDate }}</p>
+      @if (trip.cancelled) {
+        <div class="card-body">
+          <span class="removed-message">This trip is cancelled.</span>
+        </div>
+      }
+      <div class="pictures-section">
+        <h4>Pictures</h4>
+        <div class="pictures-table">
+          @for (picture of pictures; track $index) {
+            <div class="picture-row">
+              <span class="picture-index">
+                {{ $index + 1 }}
+              </span>
+              <img [src]="picture" [alt]="picture" class="picture-image" />
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
