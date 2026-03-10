@@ -1,0 +1,20 @@
+@if (auth.isAuthenticated()) {
+  <section class="session-bar">
+    <p class="session-copy">Logged in as {{ auth.user()?.email }}</p>
+    <button class="session-button" type="button" (click)="handleAuthAction()" [disabled]="auth.isLoading()">
+      Log out
+    </button>
+  </section>
+} @else {
+  <section class="login-panel">
+    <h1 class="login-title">Log in</h1>
+
+    <button class="login-button" type="button" (click)="handleAuthAction()" [disabled]="auth.isLoading()">
+      Log in with Google
+    </button>
+
+    @if (auth.authError()) {
+      <p class="login-error">{{ auth.authError() }}</p>
+    }
+  </section>
+}

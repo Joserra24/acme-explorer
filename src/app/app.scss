@@ -1,0 +1,33 @@
+.app-shell {
+  min-height: 100dvh;
+  box-sizing: border-box;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background:
+    radial-gradient(circle at top, rgba(31, 111, 235, 0.12), transparent 40%),
+    #f7f9fc;
+}
+
+.app-topbar {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1.5rem;
+}
+
+.app-content {
+  width: 100%;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+app-login,
+app-trip-display {
+  display: block;
+  width: 100%;
+}

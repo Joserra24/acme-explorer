@@ -1,0 +1,88 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.session-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  z-index: 10;
+}
+
+.session-copy {
+  margin: 0;
+  color: #0f172a;
+  font-weight: 600;
+}
+
+.session-button {
+  border: none;
+  border-radius: 999px;
+  background: #0f172a;
+  color: #fff;
+  padding: 0.65rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.session-button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.login-panel {
+  width: min(420px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid rgba(31, 111, 235, 0.14);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  text-align: center;
+}
+
+.login-title {
+  margin: 0 0 1.25rem;
+  color: #0f172a;
+  font-size: 1.75rem;
+}
+
+.login-button {
+  width: 100%;
+  border: none;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1f6feb, #0f4fb8);
+  color: #fff;
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.login-button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.login-status {
+  margin: 1rem 0 0;
+  color: #256f46;
+  font-weight: 600;
+}
+
+.login-error {
+  margin: 1rem 0 0;
+  color: #d9534f;
+}
+
+@media (max-width: 640px) {
+  .session-bar {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .session-copy {
+    font-size: 0.9rem;
+  }
+}

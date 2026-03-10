@@ -1,1 +1,15 @@
-<app-trip-display></app-trip-display>
+<main class="app-shell">
+  @if (auth.isAuthenticated()) {
+    <header class="app-topbar">
+      <app-login></app-login>
+    </header>
+
+    <section class="app-content">
+      <app-trip-display></app-trip-display>
+    </section>
+  } @else {
+    <section class="app-content">
+      <app-login></app-login>
+    </section>
+  }
+</main>
